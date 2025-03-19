@@ -7,125 +7,111 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
     <style>
         html, body {
-            height: 100%;
             margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
         }
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem;
+            width: 100%;
+            padding: 5vw;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            padding: 0 2rem;
+        }
+        @media (min-width: 1024px) {
+            .content-wrapper {
+                max-width: 33vw;
+                margin: 0 auto;
+            }
         }
         header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 4vw;
         }
-        img.logo.shimmering {
-            width: 450px;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        img.logo.shimmering::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 110%;
-            height: 100%;
-            background: linear-gradient(
-                115deg,
-                rgba(0, 0, 0, 1) 42%,
-                rgba(255, 0, 204, 0.4) 45%,
-                rgba(51, 51, 255, 0.4) 47%,
-                rgba(0, 255, 204, 0.4) 50%,
-                rgba(255, 255, 102, 0.4) 53%,
-                rgba(255, 0, 204, 0.4) 55%,
-                rgba(0, 0, 0, 1) 58%
-            );
-            mix-blend-mode: screen;
-            animation: gloss-move 5s linear infinite;
-        }
-        @keyframes gloss-move {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(100%);
-            }
+        img.logo {
+            width: 60%;
+            max-width: 450px;
+            margin-bottom: 3vw;
         }
         p.bio {
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: 4vw;
+            font-size: clamp(1rem, 2vw, 1.2rem);
         }
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 2vw;
+            margin-bottom: 4vw;
         }
         .tech-grid-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
         }
         .tech-grid-item img {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 0.5rem;
+            width: 10vw;
+            max-width: 48px;
+            margin-bottom: 1vw;
         }
         a.email-link {
             user-select: none;
         }
         footer {
-            margin-top: 3rem;
+            margin-top: 4vw;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1vw, 1rem);
             color: #777;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/thoxey/hoxeydigital.com/refs/heads/main/images/HoxeyDigitalLogo.svg" alt="Hoxey Digital Logo" class="logo shimmering">
-        <p class="bio">
-            I am a self-starting engineer with many years of experience in startups and working with enterprise customers from large to small. I have led teams of developers, contributed to commercial strategy (including roadmaps and budget allocation), and been involved in M&A discussions and long-term business relationship management. I have delivered projects across VR, AR, PC, Mac, Linux, iOS, Docker environments, and more. If you want to talk more let's connect on <a href="https://www.linkedin.com/in/tom-hoxey" target="_blank">LinkedIn</a> or check out my <a href="https://github.com/thoxey" target="_blank">GitHub</a>.
-        </p>
-        <h2>Technologies I work with:</h2>
-        <div class="tech-grid">
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">.NET</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">Unity</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">Vue.js</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">Angular</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</div>
-        </div>
+    <div class="content-wrapper">
+        <header>
+            <img src="https://raw.githubusercontent.com/thoxey/hoxeydigital.com/refs/heads/main/images/HoxeyDigitalLogo.svg" alt="Hoxey Digital Logo" class="logo">
+            <p class="bio">
+                I am a self-starting engineer with many years of experience in startups and working with enterprise customers from large to small. I have led teams of developers, contributed to commercial strategy (including roadmaps and budget allocation), and been involved in M&A discussions and long-term business relationship management. I have delivered projects across VR, AR, PC, Mac, Linux, iOS, Docker environments, and more. If you want to talk more let's connect on <a href="https://www.linkedin.com/in/tom-hoxey" target="_blank">LinkedIn</a> or check out my <a href="https://github.com/thoxey" target="_blank">GitHub</a>.
+            </p>
+            <h2>Technologies I work with:</h2>
+            <div class="tech-grid">
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">.NET</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity">Unity</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">Vue.js</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">Angular</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</div>
+            </div>
 
-        <h3>And more including:</h3>
-        <p>DCV, NVENC, FFmpeg, Codecs, VR/AR, PC, Mac, Linux, iOS, Docker environments.</p>
+            <h3>And more including:</h3>
+            <p>DCV, NVENC, FFmpeg, Codecs, VR/AR, PC, Mac, Linux, iOS, Docker environments.</p>
 
-        <h2>AWS Experience:</h2>
-        <p>Examples include hosting an NFT marketplace backend in ASP on AWS, building cloud ecosystems to support Web3 SDKs, setting up remote desktops, real-time game multiplayer servers, and DevOps for online game experiences.</p>
-        <div class="tech-grid">
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazons3.svg" alt="S3">S3</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazondynamodb.svg" alt="DynamoDB">DynamoDB</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonec2.svg" alt="EC2">EC2</div>
-            <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazon.svg" alt="EBS">EBS</div>
-            <div class="tech-grid-item"><strong>...and more</strong></div>
-        </div>
+            <h2>AWS Experience:</h2>
+            <p>Examples include hosting an NFT marketplace backend in ASP on AWS, building cloud ecosystems to support Web3 SDKs, setting up remote desktops, real-time game multiplayer servers, and DevOps for online game experiences.</p>
+            <div class="tech-grid">
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazons3.svg" alt="S3">S3</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazondynamodb.svg" alt="DynamoDB">DynamoDB</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazonec2.svg" alt="EC2">EC2</div>
+                <div class="tech-grid-item"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazon.svg" alt="EBS">EBS</div>
+                <div class="tech-grid-item"><strong>...and more</strong></div>
+            </div>
 
-        <a href="https://www.linkedin.com/in/tom-hoxey" class="button">Connect on LinkedIn</a>
-        <p>Or email me: <span class="email-link">thoxeywork<span style="display:none;">-remove-this-</span>@gmail.com</span></p>
-    </header>
-    <footer>
-        &copy; 2025 Hoxey Digital. All rights reserved.
-    </footer>
+            <a href="https://www.linkedin.com/in/tom-hoxey" class="button">Connect on LinkedIn</a>
+            <p>Or email me: <span class="email-link">thoxeywork<span style="display:none;">-remove-this-</span>@gmail.com</span></p>
+        </header>
+        <footer>
+            &copy; 2025 Hoxey Digital. All rights reserved.
+        </footer>
+    </div>
 </body>
 </html>
